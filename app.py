@@ -4,6 +4,10 @@ import sqlite3
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return jsonify({"message": "Welcome to Flask backend!"})
+
 def init_db():
     conn = sqlite3.connect('users.db')
     c = conn.cursor()
